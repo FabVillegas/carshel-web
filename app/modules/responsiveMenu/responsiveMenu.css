@@ -1,0 +1,41 @@
+.menu-container{
+  width: 98%;
+  padding: 0 2%;
+  height: 50px;
+  border-bottom: 1px solid #000000;
+  border-box: box-sizing;
+  position: fixed;
+  top: 0;
+  left: 0;
+  background-color: #FFFFFF;
+}
+
+.menu-container:before,
+.menu-container:after {
+  content: "";
+  display: table;
+  clear:both;
+  min-height: 1px;
+}
+
+.menu-state{
+  width: 16.6666666667%;
+  float: left;
+  height: 45px;
+  line-height: 45px;
+  border-box: box-sizing;
+  cursor: pointer;
+}
+
+.menu-state-icon{
+  width: 35%;
+  margin-left: 5%;
+  margin-right: 10%;
+  height: auto;
+  max-height: 100%;
+  float: left;
+}
+
+.menu-state:hover{
+  border-bottom: 5px solid #000000;
+}

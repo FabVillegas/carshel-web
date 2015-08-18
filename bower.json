@@ -1,0 +1,16 @@
+{
+    "name": "carshel-web",
+    "description": "Carshel prototype of web app",
+    "author": "Fabritzio Villegas",
+    "contributors": {},
+    "dependencies": {
+        "angular": ">=1.4.0",
+        "angular-ui-router": ">=0.2.11",
+        "angularfire": ">=1.0.0"
+    },
+    "version": "0.1.0",
+    "repository": {
+        "type": "git",
+        "url": "git://github.com/FabVillegas/carshel-web"
+    }
+}
