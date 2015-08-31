@@ -1,5 +1,82 @@
 <div ng-controller="swipeController as vm">
 
+  <div layout="column">
+
+    <fab-menu></fab-menu>
+
+
+    <div layout="row">
+      &nbsp;
+    </div>
+
+    <div layout="row">
+      &nbsp;
+    </div>
+
+    <div layout="row">
+      &nbsp;
+    </div>
+
+
+    <div layout="row" layout-align="center">
+      <div flex="33" flex-sm="100">
+        <img class="car-image" src="assets/images/placeholder_car.jpg">
+      </div>
+    </div>
+
+    <div layout="row" layout-align="center">
+      <div layout="row" layout-align="center" flex="33">
+        <div flex="50">
+          <p>Mitsubishi Lancer 2010</p>
+          <p>Monterrey, N.L.</p>
+        </div>
+        <div flex="50" layout="row" layout-align="end">
+          <p>$50 000</p>
+        </div>
+      </div>
+    </div>
+
+    <div layout="row" layout-align="center">
+      <div flex="33" layout="row" layout-align="center center">
+        <md-button class="md-raised md-primary">Like</md-button>
+        <md-button class="md-raised md-warn">Dislike</md-button>
+      </div>
+    </div>
+
+  </div>
+
+
+
+
+
+      <!--
+      <div class="md-toolbar-tools">
+        <md-button ng-click="toggleSidenav('left')" hide-gt-sm class="md-icon-button">
+          <md-icon aria-label="Menu" md-svg-icon="https://s3-us-west-2.amazonaws.com/s.cdpn.io/68133/menu.svg"></md-icon>
+        </md-button>
+        <h1>Carshel</h1>
+        <md-menu-content>
+         <md-menu-item>
+           <md-button aria-label="Swipe">
+             Swipe
+           </md-button>
+         </md-menu-item>
+       </md-menu-content>
+
+      </div>
+    -->
+
+  <!--md-menu>
+ Trigger element is a md-button with an icon
+ <md-button ng-click="$mdOpenMenu($event)" class="md-icon-button" aria-label="Open sample menu">
+   <md-icon md-svg-icon="https://s3-us-west-2.amazonaws.com/s.cdpn.io/68133/menu.svg"></md-icon>
+ </md-button>
+ <md-menu-content>
+   <md-menu-item><md-button ng-click="doSomething()">Do Something</md-button></md-menu-item>
+ </md-menu-content>
+</md-menu-->
+
+  <!--
   <div class="iso-cube">
     <div class="row">
       <div class="twelve columns">
@@ -33,4 +110,6 @@
     </div>
 
   </div>
+
+-->
 </div>

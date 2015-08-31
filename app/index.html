@@ -1,6 +1,10 @@
 <!DOCTYPE html>
 <html ng-app="carshel-web">
 	<head>
+
+		<link rel="stylesheet" href="../bower_components/angular-material/angular-material.min.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=RobotoDraft:300,400,500,700,400italic">
+
 		<meta charset="UTF-8">
 		<meta name="viewport" content="width=device-width, initial-scale=1">
 		<title>carshel-web</title>
@@ -9,25 +13,38 @@
 	  <link rel="stylesheet" type="text/css" href="css/style.css">
 
 		<link rel="stylesheet" type="text/css" href="modules/responsiveMenu/responsiveMenu.css">
-
-		<!-- ANGULAR -->
-		<script src="../bower_components/angular/angular.min.js"></script>
-		<script src="../bower_components/angular-ui-router/release/angular-ui-router.min.js"></script>
-		<!-- ANGULARFIRE -->
-		<script src="../bower_components/firebase/firebase.js"></script>
-		<script src="../bower_components/angularfire/dist/angularfire.min.js"></script>
-		<!-- CONFIG -->
-	  <script src="app.js"></script>
-    <!-- DIRECTIVES -->
-		<script src="modules/responsiveMenu/responsiveMenu.js"></script>
-		<!-- FACTORIES and SERVICES -->
-		<!-- CONTROLLERS -->
-		<script src="./states/login/loginController.js"></script>
-		<script src="./states/swipe/swipeController.js"></script>
-		<script src="./states/deals/dealsController.js"></script>
-
 	</head>
 	<body>
 		<div ui-view></div>
 	</body>
+
+	<!-- ANGULAR -->
+	<script src="../bower_components/angular/angular.min.js"></script>
+	<script src="../bower_components/angular-ui-router/release/angular-ui-router.min.js"></script>
+	<script src="../bower_components/angular-animate/angular-animate.min.js"></script>
+	<script src="../bower_components/angular-aria/angular-aria.min.js"></script>
+	<script src="../bower_components/angular-material/angular-material.min.js"></script>
+
+	<!-- ANGULARFIRE -->
+	<script src="../bower_components/firebase/firebase.js"></script>
+	<script src="../bower_components/angularfire/dist/angularfire.min.js"></script>
+
+	<!-- CONFIG -->
+	<script src="app.js"></script>
+
+	<!-- DIRECTIVES -->
+	<script src="modules/menu/fabMenu.js"></script>
+
+	<!-- FACTORIES and SERVICES -->
+	<script src="modules/imageToBase64/imageToBase64.js"></script>
+
+	<!-- CLASSES -->
+	<script src="./states/upload/car.class.js"></script>
+
+
+	<!-- CONTROLLERS -->
+	<script src="./states/login/loginController.js"></script>
+	<script src="./states/swipe/swipeController.js"></script>
+	<script src="./states/upload/uploadController.js"></script>
+
 </html>

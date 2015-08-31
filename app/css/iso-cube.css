@@ -91,3 +91,20 @@
     .offset-by-one-half.columns     { margin-left: 50%;            }
 
   }
+
+  /*
+
+  .container:before,
+.container:after {
+  content:"";
+  display:table;
+}
+.container:after {
+  clear:both;
+}
+.container {
+  zoom:1;
+}
+*/
+
+/* For IE 6/7 (trigger hasLayout) */

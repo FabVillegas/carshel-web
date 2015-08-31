@@ -1,7 +1,10 @@
 angular.module('carshel-web', [
   'ui.router',
+  'ngAnimate',
+  'ngAria',
+  'ngMaterial',
   'firebase',
-  'responsiveMenu',
+  'imageToBase64'
 ]).
 config( [ '$stateProvider', '$urlRouterProvider', function( $stateProvider, $urlRouterProvider ) {
 
@@ -18,10 +21,10 @@ config( [ '$stateProvider', '$urlRouterProvider', function( $stateProvider, $url
 		templateUrl: 'states/swipe/swipeView.html',
 		controller: 'swipeController'
 	}).
-  state('deals', {
-    url: '/deals',
-    templateUrl: 'states/deals/dealsView.html',
-    controller: 'dealsController'
+  state('upload', {
+    url: '/upload',
+    templateUrl: 'states/upload/uploadView.html',
+    controller: 'uploadController'
   });
 
 } ] );

@@ -1,0 +1,107 @@
+<div ng-controller="uploadController as vm">
+
+  <div layout="column">
+
+    <fab-menu></fab-menu>
+
+    <div layout="row">
+      &nbsp;
+    </div>
+
+    <div layout="row">
+      &nbsp;
+    </div>
+
+    <div layout="row">
+      &nbsp;
+    </div>
+
+    <div layout="row" layout-align="center">
+      <div flex="33" layout="row" layout-align="center center">
+        <md-button ng-click="vm.submitImage()" class="md-raised">
+          Upload photo
+        </md-button>
+        <label>Less than 5 MB</label>
+        <input onchange="angular.element(this).scope().vm.transformImage()" id="submitImageInput" type="file" style="display:none">
+      </div>
+    </div>
+
+    <div layout="row" layout-align="center center" layout-margin layout-wrap>
+      <div flex="20" ng-repeat="photo in vm.car.photos">
+        <img src="{{photo}}" style="width: 100%; height: auto">
+      </div>
+    </div>
+
+    <div flex="100" layout="row">
+      <h5 class="md-toolbar-tools">
+        <span>Car information</span>
+      </h5>
+    </div>
+
+    <div layout="row" layout-align="center">
+      <div flex="100">
+        <md-input-container>
+          <input type="text" placeholder="Model" ng-model="vm.car.model" required>
+        </md-input-container>
+        <md-input-container>
+          <input type="text" placeholder="Brand" ng-model="vm.car.brand" required>
+        </md-input-container>
+        <md-input-container>
+          <input type="number" placeholder="Year" ng-model="vm.car.year" required>
+        </md-input-container>
+        <md-input-container>
+          <input type="number" placeholder="Price" ng-model="vm.car.price" required>
+        </md-input-container>
+        <md-input-container>
+          <input type="text" placeholder="Description" ng-model="vm.car.description" required>
+        </md-input-container>
+      </div>
+    </div>
+
+    <div flex="100" layout="row">
+      <h5 class="md-toolbar-tools">
+        <span>Car characteristics</span>
+      </h5>
+    </div>
+
+    <div flex="100" layout="row" layout-align="center center" layout-sm="column" layout-align-sm="center start">
+      <md-checkbox aria-label="Air Conditioner?">
+        A/C
+      </md-checkbox>
+      <md-checkbox aria-label="Alarm?">
+        Alarm
+      </md-checkbox>
+      <md-checkbox aria-label="Air bags?">
+        Air Bags
+      </md-checkbox>
+      <md-checkbox aria-label="ABS Breaks?">
+        ABS Breaks
+      </md-checkbox>
+      <md-checkbox aria-label="Stereo?">
+        Stereo
+      </md-checkbox>
+    </div>
+
+    <div layout="row">
+      &nbsp;
+    </div>
+
+    <div layout="row">
+      &nbsp;
+    </div>
+
+    <div layout="row">
+      &nbsp;
+    </div>
+
+    <div layout="row" layout-align="center">
+      <div flex="33" layout="row" layout-align="center center">
+        <md-button class="md-raised md-primary">
+          Save my car
+        </md-button>
+      </div>
+    </div>
+
+  </div>
+
+</div>
