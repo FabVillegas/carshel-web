@@ -1,0 +1,52 @@
+<div ng-controller="dashboardController as vm">
+
+  <div layout="row">
+
+      <md-toolbar class="md-theme-light">
+        <div class="md-toolbar-tools">
+
+          <div flex="75" layout="row" layout-align="start center">
+            <md-button ng-click="goToState( 'upload' )" aria-label="Upload Cars Button">
+              <md-icon md-svg-icon="./assets/icons/ic_photo_camera_white_24px.svg"></md-icon>
+              Upload a Car
+            </md-button>
+            <md-button ng-click="goToState( 'swipe' )" aria-label="Swipe Cars Button">
+              <md-icon md-svg-icon="./assets/icons/ic_directions_car_white_24px.svg"></md-icon>
+              Swipe
+            </md-button>
+            <md-button aria-label="Liked Cars Button">
+              <md-icon md-svg-icon="./assets/icons/ic_thumb_up_white_24px.svg"></md-icon>
+              Liked Cars
+            </md-button>
+          </div>
+
+          <div flex="25" layout="row" layout-align="end center">
+            <md-menu >
+              <md-button ng-click="$mdOpenMenu($event)"  aria-label="Open menu">
+                <md-icon md-svg-icon="./assets/icons/ic_account_box_white_24px.svg"></md-icon>
+                <span style="text-transform: lowercase">
+                  {{vm.user.email}}
+                </span>
+              </md-button>
+              <md-menu-content>
+                <md-menu-item>
+                  <md-button ng-click="doSomething()">Car Preferences</md-button>
+                </md-menu-item>
+                <md-menu-item>
+                  <md-button ng-click="doSomething()">Change Password</md-button>
+                </md-menu-item>
+                <md-menu-item>
+                  <md-button ng-click="vm.logout()">Log out</md-button>
+                </md-menu-item>
+              </md-menu-content>
+            </md-menu>
+          </div>
+
+        </div>
+      </md-toolbar>
+
+  </div>
+
+  <ui-view class="childView"></ui-view>
+
+</div>
