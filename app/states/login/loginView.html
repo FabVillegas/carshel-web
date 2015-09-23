@@ -1,21 +1,37 @@
 <div ng-controller="loginController as vm">
-  <div class="iso-cube">
-    <div class="row" style="margin-top: 100px">
-      <div class="four columns offset-by-four">
-        <label class="login-label">Username</label>
-        <input class="login-input" type="text">
-      </div>
-    </div>
-    <div class="row">
-      <div class="four columns offset-by-four">
-        <label class="login-label">Password</label>
-        <input class="login-input" type="text">
-      </div>
-    </div>
-    <div class="row">
-      <div class="four columns offset-by-four">
-        <button class="login-button" type="button">sign in</button>
-      </div>
+  <div layout="column">
+    <div layout="row" style="height: 100px"></div>
+    <div layout="row" layout-align="center center">
+      <md-content layout="row" flex="66">
+          <md-card class="full-width">
+            <md-card-content>
+              <div flex="100" layout="row" layout-align="end center">
+                <md-button ng-click="vm.signup()" class="md-flat md-primary">Sign up</md-button>
+              </div>
+              <h1 style="text-align: center">Carshel-prototype</h1>
+              <form>
+                <md-input-container>
+                  <label>Email</label>
+                  <input required name="vm.email" ng-model="vm.email">
+                </md-input-container>
+                <md-input-container>
+                  <label>Password</label>
+                  <input required ng-model="vm.password" type="password">
+                </md-input-container>
+              </form>
+            </md-card-content>
+            <md-card-footer>
+              <div class="md-actions" layout="row">
+                <div flex="50" layout="row" layout-align="start center">
+                  <md-button class="md-flat md-primary">Forgot password</md-button>
+                </div>
+                <div flex="50" layout="row" layout-align="end center">
+                  <md-button ng-click="vm.login()" class="md-raised md-primary">Login</md-button>
+                </div>
+              </div>
+            </md-card-footer>
+          </md-card>
+      </md-content>
     </div>
   </div>
 </div>

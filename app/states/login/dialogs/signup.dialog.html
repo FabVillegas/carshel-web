@@ -1,0 +1,35 @@
+<md-dialog style="width: 50%">
+ <md-dialog-content>
+   <h1>Sign up</h1>
+   <md-input-container>
+     <label>Name</label>
+     <input type="text" ng-model="vm.newName" required>
+   </md-input-container>
+   <md-input-container>
+     <label>Lastname</label>
+     <input type="text" ng-model="vm.newLastname" required>
+   </md-input-container>
+   <md-input-container>
+     <label>Email</label>
+     <input type="text" ng-model="vm.newEmail" required>
+   </md-input-container>
+   <md-input-container>
+     <label>Password</label>
+     <input type="password" ng-model="vm.newPassword" required>
+   </md-input-container>
+   <md-input-container>
+     <label>Confirm password</label>
+     <input type="password" ng-model="vm.confirmNewPassword" required>
+   </md-input-container>
+   <md-dialog-footer>
+     <div class="md-actions" layout="row">
+       <div flex="50" layout="row" layout-align="start center">
+         <md-button ng-click="vm.closeDialog()" class="md-flat md-warn">Cancel</md-button>
+       </div>
+       <div flex="50" layout="row" layout-align="end center">
+         <md-button ng-click="vm.sendCredentials()" class="md-raised md-primary">Login</md-button>
+       </div>
+     </div>
+   </md-dialog-footer>
+ </md-dialog-content>
+</md-dialog>

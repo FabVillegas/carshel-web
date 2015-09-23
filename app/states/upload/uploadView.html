@@ -1,107 +1,95 @@
 <div ng-controller="uploadController as vm">
-
   <div layout="column">
-
-    <fab-menu></fab-menu>
-
     <div layout="row">
-      &nbsp;
-    </div>
-
-    <div layout="row">
-      &nbsp;
-    </div>
-
-    <div layout="row">
-      &nbsp;
-    </div>
-
-    <div layout="row" layout-align="center">
-      <div flex="33" layout="row" layout-align="center center">
-        <md-button ng-click="vm.submitImage()" class="md-raised">
-          Upload photo
-        </md-button>
-        <label>Less than 5 MB</label>
-        <input onchange="angular.element(this).scope().vm.transformImage()" id="submitImageInput" type="file" style="display:none">
+      <div flex="50" layout="row">
+        <md-card class="full-width">
+          <md-card-content>
+            <h5 class="md-card-title">
+              <span>Car information</span>
+            </h5>
+            <md-input-container>
+              <input type="text" placeholder="Model" ng-model="vm.car.model" required>
+            </md-input-container>
+            <md-input-container>
+              <input type="text" placeholder="Brand" ng-model="vm.car.brand" required>
+            </md-input-container>
+            <md-input-container>
+              <input type="number" placeholder="Year" min="1950" ng-model="vm.car.year" required>
+            </md-input-container>
+            <md-input-container>
+              <input type="number" placeholder="Price $ M.N." min="0.00" step="0.01" ng-model="vm.car.price" required>
+            </md-input-container>
+            <div layout="row">
+              <md-input-container flex>
+                <label>City Name</label>
+                <input type="text" ng-model="vm.car.location.city" required />
+              </md-input-container>
+              <md-input-container flex>
+                <label>State Name</label>
+                <md-select ng-model="vm.car.location.state">
+                  <md-option ng-repeat="state in vm.states" value="{{state.abbrev}}">{{state.abbrev}}</md-option>
+                </md-select>
+              </md-input-container>
+            </div>
+            <md-input-container>
+              <input type="text" placeholder="Description" ng-model="vm.car.description" required>
+            </md-input-container>
+            <h5 class="md-card-title">
+              <span>Car characteristics</span>
+            </h5>
+            <div flex="100" layout="row" layout-align="center center" layout-sm="column" layout-align-sm="center start">
+              <md-checkbox ng-model="vm.car.characteristics.ac" aria-label="Air Conditioner?">
+                A/C
+              </md-checkbox>
+              <md-checkbox ng-model="vm.car.characteristics.alarm" aria-label="Alarm?">
+                Alarm
+              </md-checkbox>
+              <md-checkbox ng-model="vm.car.characteristics.airBags" aria-label="Air bags?">
+                Air Bags
+              </md-checkbox>
+              <md-checkbox ng-model="vm.car.characteristics.absBreaks" aria-label="ABS Breaks?">
+                ABS Breaks
+              </md-checkbox>
+              <md-checkbox ng-model="vm.car.characteristics.stereo" aria-label="Stereo?">
+                Stereo
+              </md-checkbox>
+            </div>
+          </md-card-content>
+        </md-card>
+      </div>
+      <div flex="50" layout="row">
+        <md-card class="full-width">
+          <md-card-content>
+            <h5 class="md-card-title">
+              <span>Car photos</span>
+            </h5>
+            <div flex="100" layout="row" layout-align="start center">
+              <md-button ng-click="vm.submitImage()" class="md-raised">
+                Upload photo
+              </md-button>
+              <label>Less than 5 MB</label>
+              <input onchange="angular.element(this).scope().vm.transformImage()" id="submitImageInput" type="file" style="display:none">
+            </div>
+            <div flex="100">
+              <md-grid-list  md-cols-sm="1" md-cols-md="2" md-cols-gt-md="2" md-gutter="1em" md-row-height="4:3">
+                <md-grid-tile ng-repeat="source in vm.car.photos track by $index">
+                  <div class="photo-container" style="background-image: url( {{source}} )">
+                     <md-button ng-click="vm.removePhoto( $index )" class="md-fab md-mini md-warn" aria-label="Remove image">
+                       <md-tooltip md-direction="top">Remove</md-tooltip>
+                       <md-icon md-svg-icon="assets/icons/ic_cancel_white_24px.svg"></md-icon>
+                     </md-button>
+                   </div>
+                </md-grid-tile>
+              </md-grid-list>
+            </div>
+          </md-card-content>
+        </md-card>
       </div>
     </div>
-
-    <div layout="row" layout-align="center center" layout-margin layout-wrap>
-      <div flex="20" ng-repeat="photo in vm.car.photos">
-        <img src="{{photo}}" style="width: 100%; height: auto">
-      </div>
+    <div flex="100" layout="row" layout-align="center center">
+      <md-button ng-click="vm.submitCarInfo()" class="md-raised md-primary">
+        Save my car
+      </md-button>
     </div>
-
-    <div flex="100" layout="row">
-      <h5 class="md-toolbar-tools">
-        <span>Car information</span>
-      </h5>
-    </div>
-
-    <div layout="row" layout-align="center">
-      <div flex="100">
-        <md-input-container>
-          <input type="text" placeholder="Model" ng-model="vm.car.model" required>
-        </md-input-container>
-        <md-input-container>
-          <input type="text" placeholder="Brand" ng-model="vm.car.brand" required>
-        </md-input-container>
-        <md-input-container>
-          <input type="number" placeholder="Year" ng-model="vm.car.year" required>
-        </md-input-container>
-        <md-input-container>
-          <input type="number" placeholder="Price" ng-model="vm.car.price" required>
-        </md-input-container>
-        <md-input-container>
-          <input type="text" placeholder="Description" ng-model="vm.car.description" required>
-        </md-input-container>
-      </div>
-    </div>
-
-    <div flex="100" layout="row">
-      <h5 class="md-toolbar-tools">
-        <span>Car characteristics</span>
-      </h5>
-    </div>
-
-    <div flex="100" layout="row" layout-align="center center" layout-sm="column" layout-align-sm="center start">
-      <md-checkbox aria-label="Air Conditioner?">
-        A/C
-      </md-checkbox>
-      <md-checkbox aria-label="Alarm?">
-        Alarm
-      </md-checkbox>
-      <md-checkbox aria-label="Air bags?">
-        Air Bags
-      </md-checkbox>
-      <md-checkbox aria-label="ABS Breaks?">
-        ABS Breaks
-      </md-checkbox>
-      <md-checkbox aria-label="Stereo?">
-        Stereo
-      </md-checkbox>
-    </div>
-
-    <div layout="row">
-      &nbsp;
-    </div>
-
-    <div layout="row">
-      &nbsp;
-    </div>
-
-    <div layout="row">
-      &nbsp;
-    </div>
-
-    <div layout="row" layout-align="center">
-      <div flex="33" layout="row" layout-align="center center">
-        <md-button class="md-raised md-primary">
-          Save my car
-        </md-button>
-      </div>
-    </div>
-
   </div>
-
 </div>
